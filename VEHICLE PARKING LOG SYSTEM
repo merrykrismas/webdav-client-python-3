@@ -1,0 +1,44 @@
+vehicles = []  
+
+
+def log_vehicle(): 
+    plate = input("Enter vehicle plate number: ")
+    time_in = input("Enter time-in (e.g. 7:30 AM): ")
+    vehicles.append({"plate": plate, "time_in": time_in})
+    print("Vehicle logged successfully!\n")
+
+def view_vehicles():
+    if len(vehicles) == 0:
+        print("\nNo Vehicles Logged Yet.\n")
+    else:
+        print("\n--- Vehicle List ---\n")
+        for v in vehicles:
+            print("Plate: " + v["plate"] + ", Time-in: " + v["time_in"])
+        print()
+
+def generate_report():
+    print("\n--- Vehicle Report ---\n")
+    print("Total Vehicles Logged: " + str(len(vehicles)) + "\n")
+
+
+while True:
+    print("\nVehicle Parking Log System\n")
+    print("[1] Log Vehicle Parking Attendant")
+    print("[2] View Vehicles Security Supervisor")
+    print("[3] Generate Report Security Supervisor")
+    print("[4] Exit")
+
+    choice = input("\nEnter Option number: ")
+
+    if choice == "1":
+        log_vehicle()
+    elif choice == "2":
+        view_vehicles()
+    elif choice == "3":
+        generate_report()
+    elif choice == "4":
+        print("Thank you! Have a Great Day.")
+        break
+    else:
+        print("\nInvalid Option. Please Try Again.\n")
+
